@@ -10,21 +10,13 @@ on:
 jobs:
   build:
     name: "Build"
-    uses: dockette/.github/.github/workflows/docker.yml@master
+    uses: marekp/dockette-web/.github/workflows/build.yml@master
     secrets: inherit
     with:
-        image: "dockette/web"
-        tag: "${{ matrix.tag }}"
-        context: "${{ matrix.context }}"
+      image: "pinkava/web"
+      tag: "${{ matrix.tag }}"
+      context: "${{ matrix.context }}"
     strategy:
       matrix:
         include:
-          - { context: debian-php-70, tag: php-70 }
-          - { context: debian-php-71, tag: php-71 }
-          - { context: debian-php-72, tag: php-72 }
-          - { context: debian-php-73, tag: php-73 }
-          - { context: debian-php-74, tag: php-74 }
-          - { context: debian-php-80, tag: php-80 }
-          - { context: debian-php-81, tag: php-81 }
-          - { context: debian-php-82, tag: php-82 }
           - { context: debian-php-83, tag: php-83 }
