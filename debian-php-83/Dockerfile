@@ -27,6 +27,7 @@ RUN apt update && apt dist-upgrade -y && \
     apt install -y --no-install-recommends \
     nginx \
     supervisor \
+    ghostscript \
     imagemagick \
     # php8.3-apc
     php8.3-apcu \
