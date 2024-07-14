@@ -19,4 +19,5 @@ jobs:
     strategy:
       matrix:
         include:
+          - { context: debian-php-82, tag: php-82 }
           - { context: debian-php-83, tag: php-83 }
