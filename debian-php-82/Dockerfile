@@ -42,7 +42,7 @@ RUN apt update && apt dist-upgrade -y && \
     php8.2-gettext \
     php8.2-gd \
     php8.2-intl \
-    php8.3-imagick \
+    php8.2-imagick \
     php8.2-imap \
     php8.2-ldap \
     php8.2-mbstring \
