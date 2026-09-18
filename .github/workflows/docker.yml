@@ -1,11 +1,16 @@
 name: "Docker"
 
 on:
+  workflow_dispatch:
+
   push:
     branches: ["master"]
 
   schedule:
     - cron: "0 8 * * 1"
+
+permissions:
+  contents: read
 
 jobs:
   build:
