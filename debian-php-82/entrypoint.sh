@@ -10,4 +10,4 @@ while IFS='=' read -r key value; do
 done < <(printenv)
 
 # run supervisord
-supervisord --nodaemon --configuration /etc/supervisor/supervisord.conf
+exec supervisord --nodaemon --configuration /etc/supervisor/supervisord.conf
