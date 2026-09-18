@@ -62,7 +62,6 @@ RUN apt update && apt dist-upgrade -y && \
     php8.5-imagick \
     php8.5-ldap \
     php8.5-mbstring \
-    # php8.5-memcached \ zatím nefunguje
     # php8.5-mongo
     php8.5-mysql \
     php8.5-pdo \
@@ -75,6 +74,8 @@ RUN apt update && apt dist-upgrade -y && \
     php8.5-zip \
     # php8.5-xmlrpc \ # XMLRPC je v PHP 8+ zastaralé a často chybí
     php8.5-xsl && \
+    # memcached zatím nemusí být v Sury repozitáři dostupný
+    if apt-cache show php8.5-memcached > /dev/null 2>&1; then apt install -y --no-install-recommends php8.5-memcached; fi && \
     # COMPOSER #################################################################
     curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer --2 && \
     # NGINX LOGS ###############################################################
